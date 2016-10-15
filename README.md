@@ -12,6 +12,29 @@ export SMMRY_API_KEY="YOUR_SMMRY_API_KEY"
 
 ## Examples
 
+```go
+client, err := smmry.NewSmmryClient()
+if err != nil {
+	// Handle error
+}
+
+// Summary by website (summary length: 5)
+summary1, err := client.SummaryByWebsite("https://en.wikipedia.org/wiki/Richard_Stallman", "5")
+if err != nil {
+	// Handle error
+}
+fmt.Println(summary1.SmAPIContent)
+
+// Summary by text (summary length: 5)
+summary2, err := client.SummaryByText("Some long text here...", "5")
+if err != nil {
+	// Handle error
+}
+fmt.Println(summary2.SmAPIContent)
+```
+
+## Commands
+
 ### Summary by Website
 
 ```
